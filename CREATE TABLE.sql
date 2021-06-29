@@ -2,7 +2,7 @@ CREATE TABLE users (
     user_id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),
-    mobile INT(10),
+    mobile VARCHAR(20),
     pw VARCHAR(50) NOT NULL,
     ic VARCHAR(15) NOT NULL,
     PRIMARY KEY (user_id)
