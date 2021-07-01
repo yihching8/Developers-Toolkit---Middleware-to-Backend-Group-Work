@@ -3,7 +3,7 @@ CREATE TABLE users (
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),
     mobile VARCHAR(20),
-    pw VARCHAR(50) NOT NULL,
+    pw VARCHAR(15) NOT NULL,
     ic VARCHAR(15) NOT NULL,
     PRIMARY KEY (user_id)
 );
@@ -36,3 +36,9 @@ VALUES
 (1,'Kenneth Cheong','kennethc@gmail.com',92345678,'blahblah','S8888888Z');
 
 SELECT * FROM users;
+
+-- USE b11_group1;
+-- ALTER TABLE users MODIFY COLUMN pw VARCHAR(15);
+
+-- USE b11_group1;
+-- describe users;
