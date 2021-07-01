@@ -35,4 +35,4 @@ INSERT INTO users(user_id,name,email,mobile,pw,ic)
 VALUES
 (1,'Kenneth Cheong','kennethc@gmail.com',92345678,'blahblah','S8888888Z');
 
-SELECT * FROM accounts;
+SELECT * FROM users;
