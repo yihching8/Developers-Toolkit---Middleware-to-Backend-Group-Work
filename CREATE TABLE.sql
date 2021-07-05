@@ -28,6 +28,7 @@ CREATE TABLE transactions (
     FOREIGN KEY (goal_id) REFERENCES goals(goal_id)
 );
 
+select goal_id, count(amount), SUM(amount) from transactions group by goal_id;
 
 --   --Add entries
 -- INSERT INTO users(user_id,name,email,mobile,pw,ic)
