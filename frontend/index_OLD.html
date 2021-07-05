@@ -1,0 +1,74 @@
+<!-- REFERENCE COPY  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>NUS Money</title>
+  </head>
+  <body>
+    <h2>NUS MONEY</h2>
+
+    <div class="container" id="details" style="display: none">
+      <h1 id="titleName">Hello</h1>
+      <br />
+      <h4>Your Balance</h4>
+      <h1 id="balance">$0.00</h1>
+      <svg width="350" height="400"></svg>
+      <div class="inc-exp-container">
+        <div>
+          <h4>Deposit</h4>
+          <p id="deposit" class="money plus">+$0.00</p>
+        </div>
+        <div>
+          <h4>Loan</h4>
+          <p id="loan" class="money minus">-$0.00</p>
+        </div>
+      </div>
+
+      <h3>Details</h3>
+      <ul id="list" class="list">
+        <!-- /account Details Here -->
+      </ul>
+
+      <div class="form-control">
+        <p id="reco" class="blinking"></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <form id="form">
+        <span id="login">
+          <h3>Customer Login</h3>
+          <div class="form-control">
+            <label for="custname">Customer Name</label>
+            <input
+              required
+              type="text"
+              id="custname"
+              placeholder="Enter Customer Name"
+            />
+            <label for="password">Password</label>
+            <input
+              required
+              type="password"
+              id="password"
+              placeholder="Enter Any Password"
+            />
+          </div>
+          <br />
+          <button id="b1" class="btn">Login</button>
+        </span>
+
+        <span id="logoutBtn" style="display: none">
+          <button id="b2" class="btn">Logout</button>
+        </span>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
