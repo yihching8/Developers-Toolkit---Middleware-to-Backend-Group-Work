@@ -4,7 +4,7 @@ const properties = {
     user:"root",
     password:"fintechsglab",
     port: 3306,
-    database: "market",
+    database: "b11_group1",
 }
 
 let connection = mysql.createConnection(properties);
