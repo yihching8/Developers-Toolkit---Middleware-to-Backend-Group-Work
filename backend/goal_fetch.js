@@ -1,55 +1,54 @@
-// get user all 
+//get goal all
 var requestOptions = {
     method: 'GET',
     redirect: 'follow'
-  };
+};
   
-fetch("localhost:3000/users/all", requestOptions)
+fetch("localhost:3000/goals/all", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
-// get user by ID 
+//get goal by ID
 var requestOptions = {
-  method: 'GET',
-  redirect: 'follow'
-};
+    method: 'GET',
+    redirect: 'follow'
+    };
+      
+fetch("localhost:3000/goals/by-id", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 
-fetch("localhost:3000/users/by-id", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-
-
-//add user    
+//add goal    
 var requestOptions = {
     method: 'POST',
     redirect: 'follow'
-  };
-    
-fetch("localhost:3000/users/add", requestOptions)
+    };
+      
+fetch("localhost:3000/goals/add", requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
-//update user
+//update goal
 var requestOptions = {
-  method: 'PUT',
-  redirect: 'follow'
-};
+    method: 'PUT',
+    redirect: 'follow'
+    };
+      
+fetch("localhost:3000/goals/update/by-id", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
 
-fetch("localhost:3000/users/update/by-id", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-
-//delete user
+//delete goal
 var requestOptions = {
-  method: 'DELETE',
-  redirect: 'follow'
-};
-  
-fetch("localhost:3000/users/delete/by-id", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+    method: 'DELETE',
+    redirect: 'follow'
+    };
+      
+fetch("localhost:3000/goals/delete/by-id", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));    
