@@ -3,9 +3,8 @@ const express = require("express");
 
 router = express.Router();
 
-router.get("/products/all", (req, res) => {
-  let x = "select * from products";
-
+router.get("/goals/all", (req, res) => {
+  let x = "select * from goals";
   q(x, req, res).then((results) => {
     res.status(200).send(results);
   });
@@ -24,10 +23,10 @@ function q(query, req, res) {
   });
 }
 
-router.get("/products/by-id", (req, res) => {
-  let id = req.query.id; //get id from request
+router.get("/goals/by-id", (req, res) => {
+  let id = req.query.goal_id; //get id from request
   let x = `
-    select * from products
+    select * from goals
     where id = ${id}
     `;
   database.connection.query(x, (error, results) => {
@@ -40,13 +39,13 @@ router.get("/products/by-id", (req, res) => {
   });
 });
 
-router.post("/products/add", (req, res) => {
+router.post("/goals/add", (req, res) => {
   //get id from request BODY
-  let name = req.body.name;
-  let price = req.body.price;
+  let goal = req.body.description;
+  let balance = req.body.balance;
   let x = `
-    insert into products (name, market_price)
-    values ('${name}', '${price}')
+    insert into products (goal, balance)
+    values ('${goal}', '${balance}')
     `;
   database.connection.query(x, (error, results) => {
     if (error) {
@@ -58,15 +57,15 @@ router.post("/products/add", (req, res) => {
   });
 });
 
-router.put("/products/update/by-id", (req, res) => {
+router.put("/goals/update/by-id", (req, res) => {
   //get id from request BODY
-  let id = req.body.id;
-  let name = req.body.new_name;
-  let price = req.body.new_price;
+  let id = req.body.goal_id;
+  let goal = req.body.new_description;
+  let balance = req.body.new_balance;
   let x = `
-    update products
-    set name = '${name}',
-    market_price = '${price}'
+    update goals
+    set goal = '${goal}',
+    balance = '${balance}'
     where id = ${id}
     `;
   database.connection.query(x, (error, results) => {
@@ -79,10 +78,10 @@ router.put("/products/update/by-id", (req, res) => {
   });
 });
 
-router.delete("/products/delete/by-id", (req, res) => {
-  let id = req.query.id; //get id from request
+router.delete("/goals/delete/by-id", (req, res) => {
+  let id = req.query.goal_id; //get id from request
   let x = `
-    delete from products
+    delete from goals
     where id = ${id}
     `;
   database.connection.query(x, (error, results) => {
@@ -107,7 +106,6 @@ function q(query, req, res) {
     });
   });
 }
-
 
 module.exports = {
   router,

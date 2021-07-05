@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 // Import the code from user, account and transaction
-const user = require("./users");
+const user = require("./user");
 const goal = require("./goals");
 const transaction = require("./transactions");
 

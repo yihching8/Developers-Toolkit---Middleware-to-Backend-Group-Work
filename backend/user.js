@@ -25,7 +25,7 @@ function q(query, req, res) {
 }
 
 router.get("/users/by-id", (req, res) => {
-  let id = req.query.id; //get id from request
+  let id = req.query.user_id; //get id from request
   let x = `
     select * from users
     where id = ${id}
@@ -60,7 +60,7 @@ router.post("/users/add", (req, res) => {
 
 router.put("/users/update/by-id", (req, res) => {
   //get id from request BODY
-  let id = req.body.id;
+  let id = req.body.user_id;
   let name = req.body.new_name;
   let mobile = req.body.new_mobile;
   let x = `
@@ -80,7 +80,7 @@ router.put("/users/update/by-id", (req, res) => {
 });
 
 router.delete("/users/delete/by-id", (req, res) => {
-  let id = req.query.id; //get id from request
+  let id = req.query.user_id; //get id from request
   let x = `
     delete from users
     where id = ${id}
