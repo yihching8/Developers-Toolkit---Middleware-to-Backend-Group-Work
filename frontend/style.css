@@ -93,7 +93,6 @@ input[type="number"] {
 
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -175,15 +174,4 @@ input[type="number"] {
   100% {
     color: #5739ee;
   }
-}
-
-.arc text {
-  font: 18px arial;
-  text-anchor: middle;
-  color: white;
-  font-weight: bold;
-}
-
-.arc path {
-  stroke: #fff;
 }

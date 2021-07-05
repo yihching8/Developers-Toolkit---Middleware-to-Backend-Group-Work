@@ -6,9 +6,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 // Import the code from user, account and transaction
-const user = require("./users");
-const goal = require("./goals");
-const transaction = require("./transactions");
+const user = require("./user");
+const goal = require("./goal");
+const transaction = require("./transaction");
 
 // create a service object which will listen to clients' requests
 service = express();
