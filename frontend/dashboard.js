@@ -2,15 +2,31 @@
 const balance = document.getElementById("balance");
 const titleName = document.getElementById("titleName");
 const b1 = document.getElementById("b1");
+const goalsContainer = document.getElementById("goalsContainer");
 
-// const TransactionDataAll = [
-//   { id: 1, customername: "Flora", bank: "DBS", deposit: 3000, loan: 2000 },
-//   { id: 2, customername: "Flora", bank: "OCBC", deposit: 4000, loan: 2000 },
-//   { id: 3, customername: "Mikhil", bank: "DBS", deposit: 3000, loan: 2000 },
-//   { id: 4, customername: "Sashil", bank: "UOB", deposit: 6000, loan: 1000 },
-//   { id: 5, customername: "Jack", bank: "UOB", deposit: 6000, loan: 8000 },
-//   { id: 6, customername: "Jill", bank: "UOB", deposit: 7000, loan: 4000 },
-// ];
+const GoalsData = [
+  {
+    goal_id: 1,
+    description: "Books",
+    balance: 3886,
+    date_created: "2021-01-17",
+    user_id: 206,
+  },
+  {
+    goal_id: 2,
+    description: "Music",
+    balance: 4244,
+    date_created: "2021-05-25",
+    user_id: 351,
+  },
+  {
+    goal_id: 3,
+    description: "Books",
+    balance: 7341,
+    date_created: "2020-09-29",
+    user_id: 380,
+  },
+];
 
 var total_balance = 0;
 var username = "";
@@ -24,11 +40,54 @@ function init() {
   titleName.innerHTML = `Hello, ${username}`;
 
   //Get the user account balance by user ID
-  total_balance = 9999;
+  total_balance = 6999;
   balance.innerText = `$${total_balance}`;
 
   //Get the list of goals from server
   //Calculate the percentage for each goal
+  calGoals();
+}
+
+function calGoals() {
+  let bal = total_balance;
+  let elm = "";
+
+  GoalsData.forEach((goal) => {
+    //Load goal details
+    let name = goal.description;
+    let amt = goal.balance;
+    let percent = 0;
+
+    //Calc the percentage
+    if (bal >= amt) {
+      percent = 100;
+      bal -= amt;
+    } else {
+      percent = Math.trunc((bal / amt) * 100);
+      bal = 0;
+    }
+
+    //Add it to the element
+    elm += `
+      <span>${name}<span class="amt">$${amt}</span>
+          <div class="progress" style="height: 25px">
+            <div
+              class="progress-bar bg-success"
+              role="progressbar"
+              style="width: ${percent}%"
+              aria-valuenow="${percent}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              ${percent}%
+            </div>
+          </div>
+          <br />
+      </span>
+      `;
+  });
+
+  goalsContainer.innerHTML = elm;
 }
 
 function logout() {
@@ -38,4 +97,4 @@ function logout() {
 }
 
 init();
-b1.addEventListener("click", filterTransaction);
+b1.addEventListener("click", null);

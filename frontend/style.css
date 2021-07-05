@@ -175,3 +175,7 @@ input[type="number"] {
     color: #5739ee;
   }
 }
+
+.amt{
+  float: right;
+}
