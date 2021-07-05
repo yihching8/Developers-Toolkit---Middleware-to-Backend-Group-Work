@@ -19,8 +19,8 @@ service.use(cors());
 
 // Import API path mappings from user.js
 service.use(user.router);
-// Import API path mappings from account.js
-service.use(account.router);
+// Import API path mappings from goal.js
+service.use(goal.router);
 // Import API path mappings from transaction.js
 service.use(transaction.router);
 
