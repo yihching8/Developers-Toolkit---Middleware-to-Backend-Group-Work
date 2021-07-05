@@ -1,44 +1,40 @@
+USE b11_group1;
+
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(30) NOT NULL,
     email VARCHAR(50),
     mobile VARCHAR(20),
     pw VARCHAR(15) NOT NULL,
-    ic VARCHAR(15) NOT NULL,
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE accounts (
-    acct_no INT AUTO_INCREMENT NOT NULL,
-    type VARCHAR(15) NOT NULL,
+CREATE TABLE goals (
+    goal_id INT AUTO_INCREMENT NOT NULL,
+    description  VARCHAR(100) NOT NULL,
     balance DECIMAL(20,2) NOT NULL,
-    max_limit DECIMAL(20,2),
     date_created DATE NOT NULL,
     user_id INT,
-    PRIMARY KEY (acct_no),
+    PRIMARY KEY (goal_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE transactions (
     transaction_id INT AUTO_INCREMENT NOT NULL,
     date DATE NOT NULL,
-    type VARCHAR(15) NOT NULL,
-    acct_no INT,
+    goal_id INT,
     amount DECIMAL(20,2) NOT NULL,
     PRIMARY KEY (transaction_id),
-    FOREIGN KEY (acct_no) REFERENCES accounts(acct_no)
+    FOREIGN KEY (goal_id) REFERENCES goals(goal_id)
 );
 
 
-  --Add entries
-INSERT INTO users(user_id,name,email,mobile,pw,ic)
-VALUES
-(1,'Kenneth Cheong','kennethc@gmail.com',92345678,'blahblah','S8888888Z');
+--   --Add entries
+-- INSERT INTO users(user_id,name,email,mobile,pw,ic)
+-- VALUES
+-- (1,'Kenneth Cheong','kennethc@gmail.com',92345678,'blahblah','S8888888Z');
 
-SELECT * FROM users;
+--   -- Generice Commands
+-- SELECT * FROM users;
 
--- USE b11_group1;
 -- ALTER TABLE users MODIFY COLUMN pw VARCHAR(15);
-
--- USE b11_group1;
--- describe users;
