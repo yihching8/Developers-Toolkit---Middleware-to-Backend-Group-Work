@@ -30,7 +30,7 @@ function login(e) {
 
     console.log(sessionStorage.getItem("name"));
     console.log(sessionStorage.getItem("id"));
-    window.location.href = "index_OLD.html";
+    window.location.href = "dashboard.html";
   }
   //Step 3b: If failed then show alert error message
   else {
