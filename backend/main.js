@@ -7,7 +7,7 @@ const cors = require("cors");
 
 // Import the code from user, account and transaction
 const user = require("./users");
-const account = require("./goals");
+const goal = require("./goals");
 const transaction = require("./transactions");
 
 // create a service object which will listen to clients' requests
